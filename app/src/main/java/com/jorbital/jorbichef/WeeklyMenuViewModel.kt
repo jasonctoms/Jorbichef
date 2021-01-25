@@ -9,23 +9,18 @@ class WeeklyMenuViewModel : ViewModel() {
     private val _listItems = MutableLiveData<List<MenuItem>>(emptyList())
     val listItems: LiveData<List<MenuItem>> = _listItems
 
-    private val _test = MutableLiveData(0)
-    val test: LiveData<Int> = _test
-
-    private var internalList = staticList.toMutableList()
-
     init {
-        setItems(internalList)
+        setItems(staticList)
     }
 
     private fun setItems(items: List<MenuItem>) {
         _listItems.value = items
-        //_test.value = _test.value?.plus(1)
     }
 
     fun shuffleList() {
-        internalList.shuffle()
-        setItems(internalList)
+        val newList = staticList.toMutableList()
+        newList.shuffle()
+        setItems(newList.toList())
     }
 
     companion object {

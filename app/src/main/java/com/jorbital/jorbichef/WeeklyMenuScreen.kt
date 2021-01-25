@@ -7,6 +7,7 @@ import androidx.compose.material.Button
 import androidx.compose.material.Card
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
 import androidx.compose.runtime.livedata.observeAsState
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -17,15 +18,8 @@ import androidx.compose.ui.viewinterop.viewModel
 @Composable
 fun WeeklyMenuScreen() {
     val viewModel: WeeklyMenuViewModel = viewModel()
-    val menuItems = viewModel.listItems.observeAsState()
-    val test = viewModel.test.observeAsState()
-    test.value?.let {
-        val fasdf = it
-    }
-    menuItems.value?.let{
-        WeeklyMenuList(menuItems = menuItems.value!!, buttonClicked = { viewModel.shuffleList() })
-    }
-
+    val menuItems: List<MenuItem> by viewModel.listItems.observeAsState(emptyList())
+    WeeklyMenuList(menuItems = menuItems, buttonClicked = { viewModel.shuffleList() })
 }
 
 @Composable
@@ -33,7 +27,7 @@ fun WeeklyMenuList(
     menuItems: List<MenuItem>,
     buttonClicked: () -> Unit,
 ) {
-    LazyColumn() {
+    LazyColumn {
         items(menuItems) { item ->
             WeeklyMenuItem(
                 menuItem = item,
@@ -48,13 +42,18 @@ fun WeeklyMenuItem(
     menuItem: MenuItem,
     buttonClicked: () -> Unit,
 ) {
-    Card(modifier = Modifier
-        .wrapContentSize()
-        .padding(8.dp)) {
+    Card(
+        modifier = Modifier
+            .wrapContentSize()
+            .padding(8.dp)
+    ) {
         Row(modifier = Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.SpaceBetween) {
-            Text(modifier = Modifier
-                .padding(8.dp)
-                .align(Alignment.CenterVertically),text ="${menuItem.name} - ${menuItem.number}")
+            Text(
+                modifier = Modifier
+                    .padding(8.dp)
+                    .align(Alignment.CenterVertically),
+                text = "${menuItem.name} - ${menuItem.number}"
+            )
             Button(modifier = Modifier.padding(8.dp), onClick = { buttonClicked() }) {
                 Text(text = "Shuffle")
             }
@@ -64,6 +63,6 @@ fun WeeklyMenuItem(
 
 @Preview
 @Composable
-fun PreviewMenuList(){
-    WeeklyMenuList(menuItems = WeeklyMenuViewModel.staticList, buttonClicked = {  })
+fun PreviewMenuList() {
+    WeeklyMenuList(menuItems = WeeklyMenuViewModel.staticList, buttonClicked = { })
 }
