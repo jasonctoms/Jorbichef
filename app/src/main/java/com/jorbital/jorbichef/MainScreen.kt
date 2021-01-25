@@ -1,10 +1,14 @@
 package com.jorbital.jorbichef
 
+import androidx.compose.foundation.layout.padding
 import androidx.compose.material.*
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
+import androidx.compose.ui.Alignment
+import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.*
 
@@ -17,6 +21,16 @@ fun MainScreen() {
         BottomNavigationScreens.Recipes
     )
     Scaffold(
+        topBar = {
+            TopAppBar {
+                Text(
+                    text = stringResource(id = R.string.app_name),
+                    modifier = Modifier
+                        .align(Alignment.CenterVertically)
+                        .padding(start = 16.dp)
+                )
+            }
+        },
         bottomBar = {
             JorbichefBottomNavigation(navController, bottomNavigationItems)
         },
