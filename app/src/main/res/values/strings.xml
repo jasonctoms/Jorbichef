@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Jorbichef</string>
+
+    <string name="bottom_nav_weekly_menu">Weekly Menu</string>
+    <string name="bottom_nav_grocery_list">Grocery List</string>
+    <string name="bottom_nav_recipes">Recipes</string>
 </resources>
