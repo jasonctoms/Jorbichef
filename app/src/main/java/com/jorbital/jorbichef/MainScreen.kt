@@ -12,6 +12,7 @@ import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.*
 
+@Preview
 @Composable
 fun MainScreen() {
     val navController = rememberNavController()
@@ -45,27 +46,31 @@ private fun JorbichefBottomNavigation(
     items: List<BottomNavigationScreens>
 ) {
     BottomNavigation {
-        val currentRoute = currentRoute(navController)
+        val navBackStackEntry by navController.currentBackStackEntryAsState()
+        val currentRoute = navBackStackEntry?.destination?.route
         items.forEach { screen ->
             BottomNavigationItem(
-                icon = { Icon(screen.icon) },
+                icon = {
+                    Icon(
+                        imageVector = screen.icon,
+                        contentDescription = stringResource(id = screen.resourceId)
+                    )
+                },
                 label = { Text(stringResource(id = screen.resourceId)) },
                 selected = currentRoute == screen.route,
-                alwaysShowLabels = false,
+                alwaysShowLabel = false,
                 onClick = {
-                    if (currentRoute != screen.route) {
-                        navController.navigate(screen.route)
+                    navController.navigate(screen.route) {
+                        popUpTo(navController.graph.startDestinationRoute!!) {
+                            saveState = true
+                        }
+                        launchSingleTop = true
+                        restoreState = true
                     }
                 }
             )
         }
     }
-}
-
-@Composable
-private fun currentRoute(navController: NavHostController): String? {
-    val navBackStackEntry by navController.currentBackStackEntryAsState()
-    return navBackStackEntry?.arguments?.getString(KEY_ROUTE)
 }
 
 @Composable
