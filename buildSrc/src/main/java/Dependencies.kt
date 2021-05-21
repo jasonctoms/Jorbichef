@@ -18,7 +18,7 @@ object TestVersions {
 }
 
 object ProjectVersions {
-    const val agp = "7.0.0-beta01"
+    const val agp = "7.0.0-beta02"
     const val kotlinGradlePlugin = "1.4.32"
     const val googleMobileServices = "4.3.8"
 }
