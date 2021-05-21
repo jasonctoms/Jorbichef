@@ -3,11 +3,6 @@ buildscript {
         google()
         mavenCentral()
     }
-    dependencies {
-        classpath(ProjectDependencies.agp)
-        classpath(ProjectDependencies.kotlinGradlePlugin)
-        classpath(ProjectDependencies.googleMobileServices)
-    }
 }
 
 allprojects {

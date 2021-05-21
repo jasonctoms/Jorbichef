@@ -1,37 +1,14 @@
 plugins {
     id("com.android.application")
-    kotlin("android")
     id("com.google.gms.google-services")
+    id("common-module-plugin")
 }
 
 android {
-    compileSdk = AndroidConfig.compile
-    buildToolsVersion = AndroidConfig.buildToolsVersions
-
     defaultConfig {
         applicationId = AndroidConfig.applicationId
-        minSdk = AndroidConfig.min
-        targetSdk = AndroidConfig.target
         versionCode = AndroidConfig.versionCode
         versionName = AndroidConfig.versionName
-
-        testInstrumentationRunner = AndroidConfig.testInstrumentationRunner
-
-    }
-
-    buildTypes {
-        getByName("release") {
-            isMinifyEnabled = false
-            proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
-        }
-    }
-    compileOptions {
-        sourceCompatibility = Compatibility.source
-        targetCompatibility = Compatibility.target
-    }
-    kotlinOptions {
-        jvmTarget = Compatibility.target.toString()
-        useIR = true
     }
     buildFeatures {
         compose = true
@@ -42,7 +19,6 @@ android {
 }
 
 dependencies {
-
     implementation(Dependencies.composeUi)
     implementation(Dependencies.composeUiTooling)
     implementation(Dependencies.composeMaterial)
@@ -57,8 +33,4 @@ dependencies {
 
     implementation(platform(Dependencies.firebaseBom))
     implementation(Dependencies.firebaseAnalytics)
-
-    testImplementation(TestDependencies.jUnit4)
-    androidTestImplementation(TestDependencies.androidXJUnit)
-    androidTestImplementation(TestDependencies.espresso)
 }
