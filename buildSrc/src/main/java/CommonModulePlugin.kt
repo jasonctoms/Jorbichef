@@ -13,11 +13,12 @@ class CommonModulePlugin : Plugin<Project> {
         //Android block
         val androidExtensions = project.extensions.getByName("android")
         if (androidExtensions is BaseExtension) {
-            androidExtensions.configureAndroid(project)
+            androidExtensions.configureAndroid()
         }
+        project.configureDependencies()
     }
 
-    private fun BaseExtension.configureAndroid(project: Project) = run {
+    private fun BaseExtension.configureAndroid() = run {
         compileSdkVersion(AndroidConfig.compile)
         buildToolsVersion = AndroidConfig.buildToolsVersion
         defaultConfig {
@@ -54,8 +55,6 @@ class CommonModulePlugin : Plugin<Project> {
     }
 
     private fun Project.configureDependencies() = dependencies.apply {
-
-
         add("testImplementation", TestDependencies.jUnit4)
         add("androidTestImplementation", TestDependencies.androidXJUnit)
         add("androidTestImplementation", TestDependencies.espresso)
