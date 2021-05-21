@@ -16,10 +16,6 @@ android {
     composeOptions {
         kotlinCompilerExtensionVersion = Versions.compose
     }
-    kotlinOptions {
-        jvmTarget = Compatibility.target.toString()
-        freeCompilerArgs += Compatibility.enableIR
-    }
 }
 
 dependencies {

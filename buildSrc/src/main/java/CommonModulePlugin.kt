@@ -13,12 +13,12 @@ class CommonModulePlugin : Plugin<Project> {
         //Android block
         val androidExtensions = project.extensions.getByName("android")
         if (androidExtensions is BaseExtension) {
-            androidExtensions.configureAndroid()
+            androidExtensions.configureAndroid(project)
         }
         project.configureDependencies()
     }
 
-    private fun BaseExtension.configureAndroid() = run {
+    private fun BaseExtension.configureAndroid(project: Project) = run {
         compileSdkVersion(AndroidConfig.compile)
         buildToolsVersion = AndroidConfig.buildToolsVersion
         defaultConfig {
@@ -31,6 +31,12 @@ class CommonModulePlugin : Plugin<Project> {
         compileOptions {
             sourceCompatibility = Compatibility.source
             targetCompatibility = Compatibility.target
+        }
+        project.tasks.withType(KotlinCompile::class.java).configureEach {
+            kotlinOptions.apply {
+                jvmTarget = Compatibility.target.toString()
+                freeCompilerArgs += Compatibility.enableIR
+            }
         }
         testOptions {
             unitTests.isReturnDefaultValues = true
