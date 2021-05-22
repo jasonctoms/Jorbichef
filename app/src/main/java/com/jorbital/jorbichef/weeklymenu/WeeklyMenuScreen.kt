@@ -21,8 +21,7 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 import com.jorbital.jorbichef.design.JorbichefTheme
 
 @Composable
-fun WeeklyMenuScreen() {
-    val viewModel: WeeklyMenuViewModel = viewModel()
+fun WeeklyMenuScreen(viewModel: WeeklyMenuViewModel) {
     val menuItems: List<MenuItem> by viewModel.listItems.observeAsState(emptyList())
     WeeklyMenuList(menuItems = menuItems, buttonClicked = { viewModel.shuffleList() })
 }

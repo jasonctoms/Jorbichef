@@ -14,6 +14,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
+import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
@@ -23,6 +24,7 @@ import com.jorbital.jorbichef.grocerylist.GroceryListScreen
 import com.jorbital.jorbichef.R
 import com.jorbital.jorbichef.recipes.RecipesScreen
 import com.jorbital.jorbichef.weeklymenu.WeeklyMenuScreen
+import com.jorbital.jorbichef.weeklymenu.WeeklyMenuViewModel
 
 @Composable
 fun MainScreen() {
@@ -91,7 +93,8 @@ private fun MainScreenNavigationConfigurations(
 ) {
     NavHost(navController, startDestination = BottomNavigationScreens.WeeklyMenu.route) {
         composable(BottomNavigationScreens.WeeklyMenu.route) {
-            WeeklyMenuScreen()
+            val viewModel = hiltViewModel<WeeklyMenuViewModel>()
+            WeeklyMenuScreen(viewModel)
         }
         composable(BottomNavigationScreens.GroceryList.route) {
             GroceryListScreen()

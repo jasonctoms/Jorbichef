@@ -27,6 +27,7 @@ dependencies {
     implementation(Dependencies.composeMaterialIcons)
     implementation(Dependencies.composeLiveData)
     implementation(Dependencies.navigationCompose)
+    implementation(Dependencies.hiltNavigationCompose)
 
     implementation(Dependencies.coreKtx)
     implementation(Dependencies.appCompat)

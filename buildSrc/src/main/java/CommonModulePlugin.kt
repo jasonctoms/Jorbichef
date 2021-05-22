@@ -10,6 +10,8 @@ class CommonModulePlugin : Plugin<Project> {
     override fun apply(project: Project) {
         project.plugins.apply("kotlin-android")
         project.plugins.apply("org.jlleitschuh.gradle.ktlint")
+        project.plugins.apply("dagger.hilt.android.plugin")
+        project.plugins.apply("org.jetbrains.kotlin.kapt")
 
         //Android block
         val androidExtensions = project.extensions.getByName("android")
@@ -62,6 +64,8 @@ class CommonModulePlugin : Plugin<Project> {
     }
 
     private fun Project.configureDependencies() = dependencies.apply {
+        add("implementation", Dependencies.hilt)
+        add("kapt", Dependencies.hiltCompiler)
         add("testImplementation", TestDependencies.jUnit4)
         add("androidTestImplementation", TestDependencies.androidXJUnit)
         add("androidTestImplementation", TestDependencies.espresso)

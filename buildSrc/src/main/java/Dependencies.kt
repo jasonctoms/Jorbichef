@@ -1,5 +1,7 @@
 object Versions {
     const val compose = "1.0.0-beta07"
+    const val navigationCompose = "2.4.0-alpha01"
+    const val hiltNavigationCompose = "1.0.0-alpha02"
 
     const val firebaseBom = "28.0.1"
     const val firebaseUiAuth = "7.1.1"
@@ -8,8 +10,8 @@ object Versions {
     const val coreKtx = "1.5.0"
     const val appCompat = "1.3.0"
     const val material = "1.3.0"
-    const val navigationCompose = "2.4.0-alpha01"
     const val lifecycle = "2.4.0-alpha01"
+    const val hilt = "2.35.1"
 }
 
 object TestVersions {
@@ -25,11 +27,14 @@ object Dependencies {
     const val composeUiTooling = "androidx.compose.ui:ui-tooling:${Versions.compose}"
     const val composeLiveData = "androidx.compose.runtime:runtime-livedata:${Versions.compose}"
     const val navigationCompose = "androidx.navigation:navigation-compose:${Versions.navigationCompose}"
+    const val hiltNavigationCompose = "androidx.hilt:hilt-navigation-compose:${Versions.hiltNavigationCompose}"
 
     const val coreKtx = "androidx.core:core-ktx:${Versions.coreKtx}"
     const val appCompat = "androidx.appcompat:appcompat:${Versions.appCompat}"
     const val material = "com.google.android.material:material:${Versions.material}"
     const val lifecycle = "androidx.lifecycle:lifecycle-runtime-ktx:${Versions.lifecycle}"
+    const val hilt = "com.google.dagger:hilt-android:${Versions.hilt}"
+    const val hiltCompiler = "com.google.dagger:hilt-android-compiler:${Versions.hilt}"
 
     const val firebaseBom = "com.google.firebase:firebase-bom:${Versions.firebaseBom}"
     const val firebaseAnalytics = "com.google.firebase:firebase-analytics-ktx"
