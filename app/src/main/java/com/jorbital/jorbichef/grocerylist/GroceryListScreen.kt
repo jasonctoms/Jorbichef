@@ -1,4 +1,4 @@
-package com.jorbital.jorbichef
+package com.jorbital.jorbichef.grocerylist
 
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable

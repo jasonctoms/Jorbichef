@@ -1,4 +1,4 @@
-package com.jorbital.jorbichef
+package com.jorbital.jorbichef.weeklymenu
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData

@@ -1,4 +1,4 @@
-package com.jorbital.jorbichef
+package com.jorbital.jorbichef.start
 
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.BottomNavigation
@@ -19,6 +19,10 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
+import com.jorbital.jorbichef.grocerylist.GroceryListScreen
+import com.jorbital.jorbichef.R
+import com.jorbital.jorbichef.recipes.RecipesScreen
+import com.jorbital.jorbichef.weeklymenu.WeeklyMenuScreen
 
 @Composable
 fun MainScreen() {

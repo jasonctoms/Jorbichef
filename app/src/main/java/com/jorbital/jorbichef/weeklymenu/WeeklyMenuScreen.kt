@@ -1,4 +1,4 @@
-package com.jorbital.jorbichef
+package com.jorbital.jorbichef.weeklymenu
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Row
@@ -18,6 +18,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
+import com.jorbital.jorbichef.design.JorbichefTheme
 
 @Composable
 fun WeeklyMenuScreen() {
@@ -68,5 +69,7 @@ fun WeeklyMenuItem(
 @Preview
 @Composable
 fun PreviewMenuList() {
-    WeeklyMenuList(menuItems = WeeklyMenuViewModel.staticList, buttonClicked = { })
+    JorbichefTheme {
+        WeeklyMenuList(menuItems = WeeklyMenuViewModel.staticList, buttonClicked = { })
+    }
 }

@@ -1,4 +1,4 @@
-package com.jorbital.jorbichef
+package com.jorbital.jorbichef.start
 
 import androidx.annotation.StringRes
 import androidx.compose.material.icons.Icons
@@ -6,6 +6,7 @@ import androidx.compose.material.icons.filled.List
 import androidx.compose.material.icons.filled.MenuBook
 import androidx.compose.material.icons.filled.Restaurant
 import androidx.compose.ui.graphics.vector.ImageVector
+import com.jorbital.jorbichef.R
 
 sealed class BottomNavigationScreens(
     val route: String,
