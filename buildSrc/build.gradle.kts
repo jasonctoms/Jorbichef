@@ -5,6 +5,7 @@ plugins {
 repositories {
     google()
     mavenCentral()
+    maven("https://plugins.gradle.org/m2/")
 }
 
 dependencies {
@@ -12,6 +13,7 @@ dependencies {
     implementation("com.android.tools.build:gradle:7.0.0-beta02")
     implementation("org.jetbrains.kotlin:kotlin-gradle-plugin:1.4.32")
     implementation("com.google.gms:google-services:4.3.8")
+    implementation("org.jlleitschuh.gradle:ktlint-gradle:10.0.0")
 }
 
 gradlePlugin {

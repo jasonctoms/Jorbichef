@@ -2,7 +2,6 @@ package com.jorbital.jorbichef.design
 
 import androidx.compose.ui.graphics.Color
 
-
 val primaryGreen = Color(0xff2e7d32)
 val primaryGreenLight = Color(0xff60ad5e)
 val primaryGreenDark = Color(0xff005005)
