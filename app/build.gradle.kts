@@ -36,4 +36,5 @@ dependencies {
     implementation(platform(Dependencies.firebaseBom))
     implementation(Dependencies.firebaseAnalytics)
     implementation(Dependencies.firebaseAuth)
+    implementation(Dependencies.firebaseUiAuth)
 }

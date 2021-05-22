@@ -2,6 +2,7 @@ object Versions {
     const val compose = "1.0.0-beta07"
 
     const val firebaseBom = "28.0.1"
+    const val firebaseUiAuth = "7.1.1"
 
     // AndroidX
     const val coreKtx = "1.5.0"
@@ -15,12 +16,6 @@ object TestVersions {
     const val espresso = "3.3.0"
     const val androidXJUnit = "1.1.2"
     const val jUnit4 = "4.13.2"
-}
-
-object ProjectVersions {
-    const val agp = "7.0.0-beta02"
-    const val kotlinGradlePlugin = "1.4.32"
-    const val googleMobileServices = "4.3.8"
 }
 
 object Dependencies {
@@ -40,16 +35,11 @@ object Dependencies {
     const val firebaseAnalytics = "com.google.firebase:firebase-analytics-ktx"
     const val firebaseAuth = "com.google.firebase:firebase-auth-ktx"
     const val firebaseFirestore = "com.google.firebase:firebase-firestore-ktx"
+    const val firebaseUiAuth = "com.firebaseui:firebase-ui-auth:${Versions.firebaseUiAuth}"
 }
 
 object TestDependencies {
     const val jUnit4 = "junit:junit:${TestVersions.jUnit4}"
     const val androidXJUnit = "androidx.test.ext:junit:${TestVersions.androidXJUnit}"
     const val espresso = "androidx.test.espresso:espresso-core:${TestVersions.espresso}"
-}
-
-object ProjectDependencies {
-    const val agp = "com.android.tools.build:gradle:${ProjectVersions.agp}"
-    const val kotlinGradlePlugin = "org.jetbrains.kotlin:kotlin-gradle-plugin:${ProjectVersions.kotlinGradlePlugin}"
-    const val googleMobileServices = "com.google.gms:google-services:${ProjectVersions.googleMobileServices}"
 }

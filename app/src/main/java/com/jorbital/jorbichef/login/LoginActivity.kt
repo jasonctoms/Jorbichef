@@ -1,19 +1,35 @@
 package com.jorbital.jorbichef.login
 
+import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
 import androidx.activity.compose.setContent
+import androidx.activity.result.ActivityResult
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.WindowCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.core.view.WindowInsetsControllerCompat
+import com.firebase.ui.auth.AuthUI
+import com.firebase.ui.auth.IdpResponse
 import com.google.firebase.auth.FirebaseAuth
-import com.jorbital.jorbichef.start.MainActivity
 import com.jorbital.jorbichef.design.JorbichefTheme
+import com.jorbital.jorbichef.start.MainActivity
 
 class LoginActivity : AppCompatActivity() {
     private val auth: FirebaseAuth by lazy { FirebaseAuth.getInstance() }
+
+    private val loginResult = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result: ActivityResult ->
+        if (result.resultCode == Activity.RESULT_OK) {
+            openMainScreen()
+        } else {
+            val response = IdpResponse.fromResultIntent(result.data)
+            if (response != null) {
+                Toast.makeText(this, "Something went wrong", Toast.LENGTH_SHORT).show()
+            }
+        }
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -22,7 +38,13 @@ class LoginActivity : AppCompatActivity() {
             setContent {
                 JorbichefTheme {
                     LoginScreen {
-                        Toast.makeText(this, "Do a log in", Toast.LENGTH_SHORT).show()
+                        val providers = arrayListOf(AuthUI.IdpConfig.GoogleBuilder().build())
+                        loginResult.launch(
+                            AuthUI.getInstance()
+                                .createSignInIntentBuilder()
+                                .setAvailableProviders(providers)
+                                .build()
+                        )
                     }
                 }
             }
