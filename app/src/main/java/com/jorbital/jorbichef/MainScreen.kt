@@ -26,6 +26,7 @@ fun MainScreen() {
             TopAppBar {
                 Text(
                     text = stringResource(id = R.string.app_name),
+                    style = MaterialTheme.typography.h6,
                     modifier = Modifier
                         .align(Alignment.CenterVertically)
                         .padding(start = 16.dp)

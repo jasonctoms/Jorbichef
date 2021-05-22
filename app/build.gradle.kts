@@ -19,6 +19,8 @@ android {
 }
 
 dependencies {
+    implementation(project(":design"))
+
     implementation(Dependencies.composeUi)
     implementation(Dependencies.composeUiTooling)
     implementation(Dependencies.composeMaterial)
