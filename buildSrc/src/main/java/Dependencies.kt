@@ -12,6 +12,8 @@ object Versions {
     const val material = "1.3.0"
     const val lifecycle = "2.4.0-alpha01"
     const val hilt = "2.35.1"
+
+    const val apollo = "2.5.7"
 }
 
 object TestVersions {
@@ -41,6 +43,9 @@ object Dependencies {
     const val firebaseAuth = "com.google.firebase:firebase-auth-ktx"
     const val firebaseFirestore = "com.google.firebase:firebase-firestore-ktx"
     const val firebaseUiAuth = "com.firebaseui:firebase-ui-auth:${Versions.firebaseUiAuth}"
+
+    const val apolloRuntime = "com.apollographql.apollo:apollo-runtime:${Versions.apollo}"
+    const val apolloCoroutines = "com.apollographql.apollo:apollo-coroutines-support:${Versions.apollo}"
 }
 
 object TestDependencies {

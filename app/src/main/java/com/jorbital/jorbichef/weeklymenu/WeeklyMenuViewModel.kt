@@ -3,8 +3,11 @@ package com.jorbital.jorbichef.weeklymenu
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import dagger.hilt.android.lifecycle.HiltViewModel
+import javax.inject.Inject
 
-class WeeklyMenuViewModel : ViewModel() {
+@HiltViewModel
+class WeeklyMenuViewModel @Inject constructor() : ViewModel() {
 
     private val _listItems = MutableLiveData<List<MenuItem>>(emptyList())
     val listItems: LiveData<List<MenuItem>> = _listItems
