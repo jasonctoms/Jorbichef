@@ -25,7 +25,7 @@ class WeeklyMenuViewModel @Inject constructor(private val apolloTest: ApolloTest
 
     fun shuffleList() {
         viewModelScope.launch {
-            apolloTest.getIngredients()
+            //apolloTest.getIngredients()
         }
         val newList = staticList.toMutableList()
         newList.shuffle()

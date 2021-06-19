@@ -15,5 +15,4 @@ object AndroidConfig {
 object Compatibility {
     val source = JavaVersion.VERSION_1_8
     val target = JavaVersion.VERSION_1_8
-    const val enableIR = "-Xallow-jvm-ir-dependencies"
 }

@@ -1,7 +1,7 @@
 object Versions {
-    const val compose = "1.0.0-beta07"
-    const val navigationCompose = "2.4.0-alpha01"
-    const val hiltNavigationCompose = "1.0.0-alpha02"
+    const val compose = "1.0.0-beta09"
+    const val navigationCompose = "2.4.0-alpha03"
+    const val hiltNavigationCompose = "1.0.0-alpha03"
 
     const val firebaseBom = "28.0.1"
     const val firebaseUiAuth = "7.1.1"
@@ -11,7 +11,7 @@ object Versions {
     const val appCompat = "1.3.0"
     const val material = "1.3.0"
     const val lifecycle = "2.4.0-alpha01"
-    const val hilt = "2.35.1"
+    const val hilt = "2.37"
 
     const val apollo = "2.5.7"
 }

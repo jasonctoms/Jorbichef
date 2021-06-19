@@ -38,7 +38,6 @@ class CommonModulePlugin : Plugin<Project> {
         project.tasks.withType(KotlinCompile::class.java).configureEach {
             kotlinOptions.apply {
                 jvmTarget = Compatibility.target.toString()
-                freeCompilerArgs += Compatibility.enableIR
             }
         }
         testOptions {
