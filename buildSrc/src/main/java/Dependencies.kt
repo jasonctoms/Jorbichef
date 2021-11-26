@@ -1,17 +1,17 @@
 object Versions {
-    const val compose = "1.0.0-beta09"
-    const val navigationCompose = "2.4.0-alpha03"
-    const val hiltNavigationCompose = "1.0.0-alpha03"
+    const val compose = "1.0.5"
+    const val navigationCompose = "2.4.0-beta02"
+    const val hiltNavigationCompose = "1.0.0-beta01"
 
-    const val firebaseBom = "28.0.1"
-    const val firebaseUiAuth = "7.1.1"
+    const val firebaseBom = "29.0.0"
+    const val firebaseUiAuth = "7.2.0"
 
     // AndroidX
-    const val coreKtx = "1.5.0"
-    const val appCompat = "1.3.0"
+    const val coreKtx = "1.7.0"
+    const val appCompat = "1.4.0"
     const val material = "1.3.0"
-    const val lifecycle = "2.4.0-alpha01"
-    const val hilt = "2.37"
+    const val lifecycle = "2.4.0"
+    const val hilt = "2.40.2"
 
     const val apollo = "2.5.7"
 }
