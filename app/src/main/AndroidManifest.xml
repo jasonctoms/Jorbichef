@@ -15,7 +15,8 @@
         android:usesCleartextTraffic="true">
         <activity
             android:name=".login.LoginActivity"
-            android:theme="@style/Theme.Jorbichef">
+            android:theme="@style/Theme.Jorbichef"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
