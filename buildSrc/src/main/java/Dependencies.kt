@@ -1,6 +1,7 @@
 object Versions {
     const val compose = "1.1.0-beta03"
     const val navigationCompose = "2.4.0-beta02"
+    const val composeMaterial3 = "1.0.0-alpha01"
 
     const val firebaseBom = "29.0.0"
     const val firebaseUiAuth = "7.2.0"
@@ -22,6 +23,7 @@ object TestVersions {
 
 object Dependencies {
     const val composeUi = "androidx.compose.ui:ui:${Versions.compose}"
+    const val composeMaterial3 = "androidx.compose.material3:material3:${Versions.composeMaterial3}"
     const val composeMaterial = "androidx.compose.material:material:${Versions.compose}"
     const val composeMaterialIcons = "androidx.compose.material:material-icons-extended:${Versions.compose}"
     const val composeUiTooling = "androidx.compose.ui:ui-tooling:${Versions.compose}"

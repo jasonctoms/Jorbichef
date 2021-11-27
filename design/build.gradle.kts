@@ -15,7 +15,7 @@ android {
 dependencies {
     implementation(Dependencies.composeUi)
     implementation(Dependencies.composeUiTooling)
-    implementation(Dependencies.composeMaterial)
+    implementation(Dependencies.composeMaterial3)
 
     implementation(Dependencies.material)
 }

@@ -24,6 +24,7 @@ dependencies {
 
     implementation(Dependencies.composeUi)
     implementation(Dependencies.composeUiTooling)
+    implementation(Dependencies.composeMaterial3)
     implementation(Dependencies.composeMaterial)
     implementation(Dependencies.composeMaterialIcons)
     implementation(Dependencies.composeLiveData)

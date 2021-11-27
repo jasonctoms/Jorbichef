@@ -1,16 +1,18 @@
 package com.jorbital.jorbichef.start
 
 import androidx.compose.foundation.layout.padding
-import androidx.compose.material.BottomNavigation
-import androidx.compose.material.BottomNavigationItem
-import androidx.compose.material.Icon
-import androidx.compose.material.MaterialTheme
-import androidx.compose.material.Scaffold
-import androidx.compose.material.Text
-import androidx.compose.material.TopAppBar
+import androidx.compose.material3.ExperimentalMaterial3Api
+import androidx.compose.material3.Icon
+import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.NavigationBar
+import androidx.compose.material3.NavigationBarItem
+import androidx.compose.material3.NavigationRail
+import androidx.compose.material3.NavigationRailItem
+import androidx.compose.material3.Scaffold
+import androidx.compose.material3.SmallTopAppBar
+import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
-import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
@@ -26,6 +28,7 @@ import com.jorbital.jorbichef.weeklymenu.WeeklyMenuScreen
 import com.jorbital.jorbichef.weeklymenu.WeeklyMenuViewModel
 import org.koin.androidx.compose.getViewModel
 
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun MainScreen() {
     val navController = rememberNavController()
@@ -36,15 +39,16 @@ fun MainScreen() {
     )
     Scaffold(
         topBar = {
-            TopAppBar {
-                Text(
-                    text = stringResource(id = R.string.app_name),
-                    style = MaterialTheme.typography.h6,
-                    modifier = Modifier
-                        .align(Alignment.CenterVertically)
-                        .padding(start = 16.dp)
-                )
-            }
+            SmallTopAppBar(
+                title = {
+                    Text(
+                        text = stringResource(id = R.string.app_name),
+                        style = MaterialTheme.typography.headlineMedium,
+                        modifier = Modifier
+                            .padding(start = 16.dp)
+                    )
+                }
+            )
         },
         bottomBar = {
             JorbichefBottomNavigation(navController, bottomNavigationItems)
@@ -59,11 +63,11 @@ private fun JorbichefBottomNavigation(
     navController: NavHostController,
     items: List<BottomNavigationScreens>
 ) {
-    BottomNavigation {
+    NavigationBar {
         val navBackStackEntry by navController.currentBackStackEntryAsState()
         val currentRoute = navBackStackEntry?.destination?.route
         items.forEach { screen ->
-            BottomNavigationItem(
+            NavigationBarItem(
                 icon = {
                     Icon(
                         imageVector = screen.icon,
