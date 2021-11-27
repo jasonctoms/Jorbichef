@@ -14,7 +14,6 @@ dependencies {
     implementation("org.jetbrains.kotlin:kotlin-gradle-plugin:1.5.31")
     implementation("com.google.gms:google-services:4.3.10")
     implementation("org.jlleitschuh.gradle:ktlint-gradle:10.2.0")
-    implementation("com.google.dagger:hilt-android-gradle-plugin:2.40.2")
 }
 
 gradlePlugin {

@@ -3,14 +3,8 @@ package com.jorbital.jorbichef.weeklymenu
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import androidx.lifecycle.viewModelScope
-import com.jorbital.jorbichef.network.ApolloTestClass
-import dagger.hilt.android.lifecycle.HiltViewModel
-import kotlinx.coroutines.launch
-import javax.inject.Inject
 
-@HiltViewModel
-class WeeklyMenuViewModel @Inject constructor(private val apolloTest: ApolloTestClass) : ViewModel() {
+class WeeklyMenuViewModel : ViewModel() {
 
     private val _listItems = MutableLiveData<List<MenuItem>>(emptyList())
     val listItems: LiveData<List<MenuItem>> = _listItems
@@ -24,9 +18,6 @@ class WeeklyMenuViewModel @Inject constructor(private val apolloTest: ApolloTest
     }
 
     fun shuffleList() {
-        viewModelScope.launch {
-            //apolloTest.getIngredients()
-        }
         val newList = staticList.toMutableList()
         newList.shuffle()
         setItems(newList.toList())
