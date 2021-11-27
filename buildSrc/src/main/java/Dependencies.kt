@@ -1,5 +1,5 @@
 object Versions {
-    const val compose = "1.0.5"
+    const val compose = "1.1.0-beta03"
     const val navigationCompose = "2.4.0-beta02"
 
     const val firebaseBom = "29.0.0"

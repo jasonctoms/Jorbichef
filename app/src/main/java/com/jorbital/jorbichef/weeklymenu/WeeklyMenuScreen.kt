@@ -1,5 +1,6 @@
 package com.jorbital.jorbichef.weeklymenu
 
+import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -17,7 +18,6 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import androidx.lifecycle.viewmodel.compose.viewModel
 import com.jorbital.jorbichef.design.JorbichefTheme
 
 @Composable
@@ -26,14 +26,16 @@ fun WeeklyMenuScreen(viewModel: WeeklyMenuViewModel) {
     WeeklyMenuList(menuItems = menuItems, buttonClicked = { viewModel.shuffleList() })
 }
 
+@OptIn(ExperimentalFoundationApi::class)
 @Composable
 fun WeeklyMenuList(
     menuItems: List<MenuItem>,
     buttonClicked: () -> Unit,
 ) {
     LazyColumn {
-        items(menuItems) { item ->
+        items(items = menuItems, key = { it.number }) { item ->
             WeeklyMenuItem(
+                modifier = Modifier.animateItemPlacement(),
                 menuItem = item,
                 buttonClicked = buttonClicked
             )
@@ -43,11 +45,12 @@ fun WeeklyMenuList(
 
 @Composable
 fun WeeklyMenuItem(
+    modifier: Modifier = Modifier,
     menuItem: MenuItem,
     buttonClicked: () -> Unit,
 ) {
     Card(
-        modifier = Modifier
+        modifier = modifier
             .wrapContentSize()
             .padding(8.dp)
     ) {
