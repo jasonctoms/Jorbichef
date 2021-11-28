@@ -1,5 +1,6 @@
 package com.jorbital.jorbichef.weeklymenu
 
+import android.content.res.Configuration.UI_MODE_NIGHT_YES
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Row
@@ -10,6 +11,8 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.material.Card
 import androidx.compose.material3.Button
+import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
@@ -32,13 +35,15 @@ fun WeeklyMenuList(
     menuItems: List<MenuItem>,
     buttonClicked: () -> Unit,
 ) {
-    LazyColumn {
-        items(items = menuItems, key = { it.number }) { item ->
-            WeeklyMenuItem(
-                modifier = Modifier.animateItemPlacement(),
-                menuItem = item,
-                buttonClicked = buttonClicked
-            )
+    Surface {
+        LazyColumn {
+            items(items = menuItems, key = { it.number }) { item ->
+                WeeklyMenuItem(
+                    modifier = Modifier.animateItemPlacement(),
+                    menuItem = item,
+                    buttonClicked = buttonClicked
+                )
+            }
         }
     }
 }
@@ -50,6 +55,8 @@ fun WeeklyMenuItem(
     buttonClicked: () -> Unit,
 ) {
     Card(
+        backgroundColor = MaterialTheme.colorScheme.surface,
+        elevation = 4.dp,
         modifier = modifier
             .wrapContentSize()
             .padding(8.dp)
@@ -70,7 +77,15 @@ fun WeeklyMenuItem(
 
 @Preview
 @Composable
-fun PreviewMenuList() {
+fun PreviewMenuListLight() {
+    JorbichefTheme {
+        WeeklyMenuList(menuItems = WeeklyMenuViewModel.staticList, buttonClicked = { })
+    }
+}
+
+@Preview(uiMode = UI_MODE_NIGHT_YES)
+@Composable
+fun PreviewMenuListDark() {
     JorbichefTheme {
         WeeklyMenuList(menuItems = WeeklyMenuViewModel.staticList, buttonClicked = { })
     }
