@@ -1,10 +1,10 @@
 object Versions {
-    const val compose = "1.1.0-beta03"
-    const val navigationCompose = "2.4.0-beta02"
-    const val composeMaterial3 = "1.0.0-alpha01"
+    const val compose = "1.1.0-rc01"
+    const val navigationCompose = "2.4.0-rc01"
+    const val composeMaterial3 = "1.0.0-alpha02"
 
-    const val firebaseBom = "29.0.0"
-    const val firebaseUiAuth = "7.2.0"
+    const val firebaseBom = "29.0.3"
+    const val firebaseUiAuth = "8.0.0"
 
     // AndroidX
     const val coreKtx = "1.7.0"
