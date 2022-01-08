@@ -23,13 +23,13 @@ sealed class BottomNavigationScreens(
     object GroceryList : BottomNavigationScreens(
         route = "GroceryList",
         resourceId = R.string.bottom_nav_grocery_list,
-        icon = Icons.Filled.List
+        icon = Icons.Default.List
     )
 
     object Recipes :
         BottomNavigationScreens(
             route = "Recipes",
             resourceId = R.string.bottom_nav_recipes,
-            icon = Icons.Filled.MenuBook
+            icon = Icons.Default.MenuBook
         )
 }

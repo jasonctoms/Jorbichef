@@ -10,7 +10,7 @@ repositories {
 
 dependencies {
     compileOnly(gradleApi())
-    implementation("com.android.tools.build:gradle:7.1.0-beta05")
+    implementation("com.android.tools.build:gradle:7.1.0-rc01")
     implementation("org.jetbrains.kotlin:kotlin-gradle-plugin:1.6.0")
     implementation("com.google.gms:google-services:4.3.10")
     implementation("org.jlleitschuh.gradle:ktlint-gradle:10.2.0")
