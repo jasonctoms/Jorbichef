@@ -4,4 +4,6 @@ plugins {
 }
 
 dependencies {
+    implementation(Dependencies.roomRuntime)
+    annotationProcessor(Dependencies.roomCompiler)
 }

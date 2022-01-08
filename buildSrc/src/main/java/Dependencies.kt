@@ -1,8 +1,10 @@
 object Versions {
+    // Compose
     const val compose = "1.1.0-rc01"
     const val navigationCompose = "2.4.0-rc01"
     const val composeMaterial3 = "1.0.0-alpha02"
 
+    // Firebase
     const val firebaseBom = "29.0.3"
     const val firebaseUiAuth = "8.0.0"
 
@@ -11,7 +13,9 @@ object Versions {
     const val appCompat = "1.4.0"
     const val material = "1.3.0"
     const val lifecycle = "2.4.0"
+    const val roomVersion = "2.4.0"
 
+    // Koin
     const val koin = "3.1.4"
 }
 
@@ -22,6 +26,7 @@ object TestVersions {
 }
 
 object Dependencies {
+    // Compose
     const val composeUi = "androidx.compose.ui:ui:${Versions.compose}"
     const val composeMaterial3 = "androidx.compose.material3:material3:${Versions.composeMaterial3}"
     const val composeMaterial = "androidx.compose.material:material:${Versions.compose}"
@@ -30,17 +35,22 @@ object Dependencies {
     const val composeLiveData = "androidx.compose.runtime:runtime-livedata:${Versions.compose}"
     const val navigationCompose = "androidx.navigation:navigation-compose:${Versions.navigationCompose}"
 
-    const val coreKtx = "androidx.core:core-ktx:${Versions.coreKtx}"
-    const val appCompat = "androidx.appcompat:appcompat:${Versions.appCompat}"
-    const val material = "com.google.android.material:material:${Versions.material}"
-    const val lifecycle = "androidx.lifecycle:lifecycle-runtime-ktx:${Versions.lifecycle}"
-
+    // Firebase
     const val firebaseBom = "com.google.firebase:firebase-bom:${Versions.firebaseBom}"
     const val firebaseAnalytics = "com.google.firebase:firebase-analytics-ktx"
     const val firebaseAuth = "com.google.firebase:firebase-auth-ktx"
     const val firebaseFirestore = "com.google.firebase:firebase-firestore-ktx"
     const val firebaseUiAuth = "com.firebaseui:firebase-ui-auth:${Versions.firebaseUiAuth}"
 
+    // AndroidX
+    const val coreKtx = "androidx.core:core-ktx:${Versions.coreKtx}"
+    const val appCompat = "androidx.appcompat:appcompat:${Versions.appCompat}"
+    const val material = "com.google.android.material:material:${Versions.material}"
+    const val lifecycle = "androidx.lifecycle:lifecycle-runtime-ktx:${Versions.lifecycle}"
+    const val roomRuntime = "androidx.room:room-runtime:${Versions.roomVersion}"
+    const val roomCompiler = "androidx.room:room-compiler:${Versions.roomVersion}"
+
+    // Koin
     const val koin = "io.insert-koin:koin-android:${Versions.koin}"
     const val koinCompose = "io.insert-koin:koin-androidx-compose:${Versions.koin}"
 }
