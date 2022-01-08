@@ -20,7 +20,7 @@ android {
 
 dependencies {
     implementation(project(":design"))
-    implementation(project(":network"))
+    implementation(project(":backend"))
 
     implementation(Dependencies.composeUi)
     implementation(Dependencies.composeUiTooling)
