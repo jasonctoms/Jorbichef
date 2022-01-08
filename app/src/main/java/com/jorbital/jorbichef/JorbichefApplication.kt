@@ -6,6 +6,7 @@ import org.koin.android.ext.koin.androidContext
 import org.koin.android.ext.koin.androidLogger
 import org.koin.core.context.GlobalContext.startKoin
 import org.koin.core.logger.Level
+import timber.log.Timber
 
 class JorbichefApplication : Application() {
     override fun onCreate() {
@@ -14,6 +15,10 @@ class JorbichefApplication : Application() {
             androidLogger(if (BuildConfig.DEBUG) Level.ERROR else Level.NONE)
             androidContext(this@JorbichefApplication)
             modules(appKoinModule, backendKoinModule)
+        }
+
+        if (BuildConfig.DEBUG) {
+            Timber.plant(Timber.DebugTree())
         }
     }
 }

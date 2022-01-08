@@ -17,6 +17,10 @@ object Versions {
 
     // Koin
     const val koin = "3.1.4"
+
+    const val timber = "5.0.1"
+
+    const val coroutinesPlayServices = "1.6.0"
 }
 
 object TestVersions {
@@ -53,6 +57,10 @@ object Dependencies {
     // Koin
     const val koin = "io.insert-koin:koin-android:${Versions.koin}"
     const val koinCompose = "io.insert-koin:koin-androidx-compose:${Versions.koin}"
+
+    const val timber = "com.jakewharton.timber:timber:${Versions.timber}"
+
+    const val coroutinesPlayServices = "org.jetbrains.kotlinx:kotlinx-coroutines-play-services:${Versions.coroutinesPlayServices}"
 }
 
 object TestDependencies {

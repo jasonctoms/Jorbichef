@@ -64,6 +64,7 @@ class CommonModulePlugin : Plugin<Project> {
     private fun Project.configureDependencies() = dependencies.apply {
         add("implementation", Dependencies.koin)
         add("implementation", Dependencies.koinCompose)
+        add("implementation", Dependencies.timber)
         add("testImplementation", TestDependencies.jUnit4)
         add("androidTestImplementation", TestDependencies.androidXJUnit)
         add("androidTestImplementation", TestDependencies.espresso)

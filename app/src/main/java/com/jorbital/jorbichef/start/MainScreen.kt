@@ -26,6 +26,7 @@ import androidx.navigation.compose.rememberNavController
 import com.jorbital.jorbichef.R
 import com.jorbital.jorbichef.grocerylist.GroceryListScreen
 import com.jorbital.jorbichef.recipes.RecipesScreen
+import com.jorbital.jorbichef.recipes.RecipesViewModel
 import com.jorbital.jorbichef.weeklymenu.WeeklyMenuScreen
 import com.jorbital.jorbichef.weeklymenu.WeeklyMenuViewModel
 import org.koin.androidx.compose.getViewModel
@@ -104,7 +105,8 @@ private fun MainScreenNavigationConfigurations(
             GroceryListScreen()
         }
         composable(BottomNavigationScreens.Recipes.route) {
-            RecipesScreen()
+            val viewModel = getViewModel<RecipesViewModel>()
+            RecipesScreen(viewModel)
         }
     }
 }

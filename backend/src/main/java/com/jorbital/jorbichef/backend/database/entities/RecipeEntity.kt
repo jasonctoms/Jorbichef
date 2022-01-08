@@ -5,5 +5,7 @@ import androidx.room.PrimaryKey
 
 @Entity(tableName = "recipe")
 data class RecipeEntity(
-    @PrimaryKey val id: String
+    @PrimaryKey val id: String,
+    val userId: String,
+    val name: String
 )
