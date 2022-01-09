@@ -13,8 +13,12 @@ val backendKoinModule = module {
             .fallbackToDestructiveMigration()
             .build()
     }
+    single { get<JorbichefDatabase>().userDao() }
+    single { get<JorbichefDatabase>().ingredientDao() }
+    single { get<JorbichefDatabase>().tagDao() }
     single { get<JorbichefDatabase>().recipeDao() }
+
     single { FirestoreService() }
 
-    factory { SyncRepository(get()) }
+    factory { SyncRepository(get(), get(), get(), get(), get()) }
 }

@@ -4,3 +4,4 @@ include(
     ":design",
     ":backend"
 )
+include(":core")

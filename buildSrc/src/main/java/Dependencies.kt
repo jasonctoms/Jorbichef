@@ -21,6 +21,9 @@ object Versions {
     const val timber = "5.0.1"
 
     const val coroutinesPlayServices = "1.6.0"
+
+    const val kotlinSerialization = "1.6.10"
+    const val kotlinSerializationJson = "1.3.2"
 }
 
 object TestVersions {
@@ -51,6 +54,7 @@ object Dependencies {
     const val appCompat = "androidx.appcompat:appcompat:${Versions.appCompat}"
     const val material = "com.google.android.material:material:${Versions.material}"
     const val lifecycle = "androidx.lifecycle:lifecycle-runtime-ktx:${Versions.lifecycle}"
+    const val room = "androidx.room:room-ktx:${Versions.roomVersion}"
     const val roomRuntime = "androidx.room:room-runtime:${Versions.roomVersion}"
     const val roomCompiler = "androidx.room:room-compiler:${Versions.roomVersion}"
 
@@ -61,6 +65,8 @@ object Dependencies {
     const val timber = "com.jakewharton.timber:timber:${Versions.timber}"
 
     const val coroutinesPlayServices = "org.jetbrains.kotlinx:kotlinx-coroutines-play-services:${Versions.coroutinesPlayServices}"
+
+    const val kotlinSerializationJson = "org.jetbrains.kotlinx:kotlinx-serialization-json:${Versions.kotlinSerializationJson}"
 }
 
 object TestDependencies {

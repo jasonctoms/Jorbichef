@@ -6,6 +6,5 @@ import androidx.compose.ui.tooling.preview.Preview
 
 @Composable
 fun RecipesScreen(viewModel: RecipesViewModel) {
-    viewModel.testFirestore()
     Text("Recipes screen")
 }

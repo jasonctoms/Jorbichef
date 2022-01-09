@@ -14,7 +14,7 @@ class JorbichefApplication : Application() {
         startKoin {
             androidLogger(if (BuildConfig.DEBUG) Level.ERROR else Level.NONE)
             androidContext(this@JorbichefApplication)
-            modules(appKoinModule, backendKoinModule)
+            modules(backendKoinModule, appKoinModule)
         }
 
         if (BuildConfig.DEBUG) {

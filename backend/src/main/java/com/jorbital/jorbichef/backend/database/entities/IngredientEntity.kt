@@ -9,23 +9,24 @@ import androidx.room.PrimaryKey
 import androidx.room.Query
 import kotlinx.coroutines.flow.Flow
 
-@Entity(tableName = "recipe")
-data class RecipeEntity(
+@Entity(tableName = "ingredient")
+data class IngredientEntity(
     @PrimaryKey val id: String,
-    val name: String
+    val name: String,
+    val isCustom: Boolean
 )
 
 @Dao
-interface RecipeDao {
-    @Query("SELECT * FROM recipe")
-    fun getAll(): Flow<List<RecipeEntity>>
+interface IngredientDao {
+    @Query("SELECT * FROM ingredient")
+    fun getAll(): Flow<List<IngredientEntity>>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    fun insertAll(recipes: List<RecipeEntity>)
+    fun insertAll(ingredients: List<IngredientEntity>)
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    fun insert(recipe: RecipeEntity)
+    fun insert(ingredient: IngredientEntity)
 
     @Delete
-    fun delete(recipe: RecipeEntity)
+    fun delete(ingredient: IngredientEntity)
 }
