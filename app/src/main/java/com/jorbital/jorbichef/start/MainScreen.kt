@@ -1,6 +1,5 @@
 package com.jorbital.jorbichef.start
 
-import androidx.compose.foundation.Image
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -28,6 +27,7 @@ import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
@@ -35,7 +35,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
-import coil.compose.rememberImagePainter
+import coil.compose.AsyncImage
 import com.jorbital.jorbichef.R
 import com.jorbital.jorbichef.grocerylist.GroceryListScreen
 import com.jorbital.jorbichef.recipes.RecipesScreen
@@ -64,14 +64,10 @@ fun MainScreen(viewModel: MainScreenViewModel) {
                     )
                 },
                 actions = {
-                    Image(
-                        painter = rememberImagePainter(
-                            data = viewModel.currentUser?.photoUrl,
-                            builder = {
-                                placeholder(R.drawable.ic_account_circle)
-                                fallback(R.drawable.ic_account_circle)
-                            }
-                        ),
+                    AsyncImage(
+                        model = viewModel.currentUser?.photoUrl,
+                        placeholder = painterResource(id = R.drawable.ic_account_circle),
+                        fallback = painterResource(id = R.drawable.ic_account_circle),
                         contentDescription = stringResource(R.string.content_description_options_menu),
                         modifier = Modifier
                             .padding(end = 16.dp, start = 16.dp, top = 2.dp, bottom = 2.dp)
@@ -79,7 +75,8 @@ fun MainScreen(viewModel: MainScreenViewModel) {
                             .size(width = 32.dp, height = 32.dp)
                             .clickable {
                                 openDialog.value = true
-                            })
+                            }
+                    )
                 }
             )
         },
