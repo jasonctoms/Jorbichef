@@ -35,6 +35,9 @@ dependencies {
     implementation(Dependencies.material)
     implementation(Dependencies.lifecycle)
 
+    implementation(Dependencies.coil)
+    implementation(Dependencies.coilCompose)
+
     implementation(platform(Dependencies.firebaseBom))
     implementation(Dependencies.firebaseAnalytics)
     implementation(Dependencies.firebaseAuth)

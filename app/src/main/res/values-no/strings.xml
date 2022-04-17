@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="sign_in">Logg på med Google</string>
+
+    <string name="bottom_nav_weekly_menu">Ukens Meny</string>
+    <string name="bottom_nav_grocery_list">Handeliste</string>
+    <string name="bottom_nav_recipes">Oppskrifter</string>
+
+    <string name="options_menu_title">Instillinger</string>
+    <string name="options_menu_sync">Synkronisere fra skyen</string>
+
+    <string name="content_description_options_menu">Instillingermenyen</string>
+</resources>

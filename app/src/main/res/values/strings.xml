@@ -1,9 +1,14 @@
 <resources>
-    <string name="app_name">Jorbichef</string>
+    <string name="app_name" translatable="false">Jorbichef</string>
 
     <string name="sign_in">Sign in with Google</string>
 
     <string name="bottom_nav_weekly_menu">Weekly Menu</string>
     <string name="bottom_nav_grocery_list">Grocery List</string>
     <string name="bottom_nav_recipes">Recipes</string>
+
+    <string name="options_menu_title">Options</string>
+    <string name="options_menu_sync">Sync from cloud</string>
+
+    <string name="content_description_options_menu">Options menu</string>
 </resources>

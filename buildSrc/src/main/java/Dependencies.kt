@@ -22,8 +22,11 @@ object Versions {
 
     const val coroutinesPlayServices = "1.6.0"
 
+    // Kotlin Serialization
     const val kotlinSerialization = "1.6.10"
     const val kotlinSerializationJson = "1.3.2"
+
+    const val coil = "1.4.0"
 }
 
 object TestVersions {
@@ -67,6 +70,9 @@ object Dependencies {
     const val coroutinesPlayServices = "org.jetbrains.kotlinx:kotlinx-coroutines-play-services:${Versions.coroutinesPlayServices}"
 
     const val kotlinSerializationJson = "org.jetbrains.kotlinx:kotlinx-serialization-json:${Versions.kotlinSerializationJson}"
+
+    const val coil = "io.coil-kt:coil:${Versions.coil}"
+    const val coilCompose = "io.coil-kt:coil-compose:${Versions.coil}"
 }
 
 object TestDependencies {
