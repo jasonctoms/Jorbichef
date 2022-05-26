@@ -1,8 +1,8 @@
 object Versions {
     // Compose
-    const val compose = "1.2.0-alpha07"
+    const val compose = "1.2.0-beta02"
     const val navigationCompose = "2.4.2"
-    const val composeMaterial3 = "1.0.0-alpha09"
+    const val composeMaterial3 = "1.0.0-alpha12"
 
     // Firebase
     const val firebaseBom = "29.0.3"
@@ -16,17 +16,17 @@ object Versions {
     const val roomVersion = "2.4.2"
 
     // Koin
-    const val koin = "3.1.4"
+    const val koin = "3.2.0"
 
     const val timber = "5.0.1"
 
     const val coroutinesPlayServices = "1.6.1"
 
     // Kotlin Serialization
-    const val kotlinSerialization = "1.6.10"
-    const val kotlinSerializationJson = "1.3.2"
+    const val kotlinSerialization = "1.6.21"
+    const val kotlinSerializationJson = "1.3.3"
 
-    const val coil = "2.0.0-rc03"
+    const val coil = "2.1.0"
 }
 
 object TestVersions {

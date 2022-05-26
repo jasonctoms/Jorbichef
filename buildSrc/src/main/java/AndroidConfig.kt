@@ -2,9 +2,9 @@ import org.gradle.api.JavaVersion
 
 object AndroidConfig {
     const val min = 26
-    const val compile = 31
+    const val compile = 32
     const val target = compile
-    const val buildToolsVersion = "31.0.0"
+    const val buildToolsVersion = "32.0.0"
     const val testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
 
     const val applicationId = "com.jorbital.jorbichef"

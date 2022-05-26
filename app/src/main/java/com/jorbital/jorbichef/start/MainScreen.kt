@@ -3,6 +3,7 @@ package com.jorbital.jorbichef.start
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -110,7 +111,7 @@ fun MainScreen(viewModel: MainScreenViewModel) {
                 },
             )
         }
-        MainScreenNavigationConfigurations(navController)
+        MainScreenNavigationConfigurations(navController, it)
     }
 }
 
@@ -149,9 +150,14 @@ private fun JorbichefBottomNavigation(
 
 @Composable
 private fun MainScreenNavigationConfigurations(
-    navController: NavHostController
+    navController: NavHostController,
+    contentPadding: PaddingValues
 ) {
-    NavHost(navController, startDestination = BottomNavigationScreens.WeeklyMenu.route) {
+    NavHost(
+        modifier = Modifier.padding(contentPadding),
+        navController = navController,
+        startDestination = BottomNavigationScreens.WeeklyMenu.route
+    ) {
         composable(BottomNavigationScreens.WeeklyMenu.route) {
             val viewModel = getViewModel<WeeklyMenuViewModel>()
             WeeklyMenuScreen(viewModel)

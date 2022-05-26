@@ -11,7 +11,7 @@ import timber.log.Timber
 class MainScreenViewModel(private val syncRepository: SyncRepository) : ViewModel() {
     val currentUser by lazy { FirebaseAuth.getInstance().currentUser }
 
-    val downloadFlow = syncRepository.downloadFromFirestore
+    private val downloadFlow = syncRepository.downloadFromFirestore
 
     fun initialSync() {
         viewModelScope.launch {
