@@ -13,6 +13,8 @@ import kotlinx.coroutines.flow.Flow
 data class IngredientEntity(
     @PrimaryKey val id: String,
     val name: String,
+    val imageUrl: String,
+    val type: IngredientType,
     val isCustom: Boolean
 )
 
@@ -29,4 +31,17 @@ interface IngredientDao {
 
     @Delete
     fun delete(ingredient: IngredientEntity)
+}
+
+enum class IngredientType {
+    EGGS_AND_DAIRY,
+    FATS_AND_OILS,
+    GRAINS_NUTS_AND_BAKING,
+    VEGETABLES,
+    FRUITS,
+    HERBS_AND_SPICES,
+    MEATS,
+    PASTA_RICE_AND_BEANS,
+    VEGAN_ALTERNATIVES,
+    OTHER
 }

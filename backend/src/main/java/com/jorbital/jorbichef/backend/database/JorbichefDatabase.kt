@@ -11,13 +11,14 @@ import com.jorbital.jorbichef.backend.database.entities.TagDao
 import com.jorbital.jorbichef.backend.database.entities.TagEntity
 import com.jorbital.jorbichef.backend.database.entities.UserDao
 import com.jorbital.jorbichef.backend.database.entities.UserEntity
+import com.jorbital.jorbichef.backend.database.typeconverters.StringListConverter
 
 @Database(
     entities = [UserEntity::class,
         IngredientEntity::class,
         TagEntity::class,
         RecipeEntity::class],
-    version = 2,
+    version = 3,
     exportSchema = false
 )
 @TypeConverters(

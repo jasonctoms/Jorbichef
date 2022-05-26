@@ -1,4 +1,4 @@
-package com.jorbital.jorbichef.backend.database
+package com.jorbital.jorbichef.backend.database.typeconverters
 
 import androidx.room.TypeConverter
 import kotlinx.serialization.decodeFromString

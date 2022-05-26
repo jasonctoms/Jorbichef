@@ -11,7 +11,7 @@ import kotlinx.coroutines.tasks.await
 
 class FirestoreService {
     private val firestore by lazy { Firebase.firestore }
-    val currentUserId by lazy { FirebaseAuth.getInstance().currentUser?.uid }
+    private val currentUserId by lazy { FirebaseAuth.getInstance().currentUser?.uid }
 
     val getDefaultIngredients = flow {
         val snapshot = firestore.collection(DEFAULT_INGREDIENTS_COLLECTION).get().await()

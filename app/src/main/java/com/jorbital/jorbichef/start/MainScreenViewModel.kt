@@ -24,4 +24,14 @@ class MainScreenViewModel(private val syncRepository: SyncRepository) : ViewMode
             }
         }
     }
+
+    fun forceSync() {
+        viewModelScope.launch {
+            downloadFlow.collectLatest {
+                if (it.isFailure) {
+                    Timber.e(it.exceptionOrNull())
+                }
+            }
+        }
+    }
 }

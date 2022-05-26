@@ -15,6 +15,7 @@ dependencies {
 
     implementation(platform(Dependencies.firebaseBom))
     implementation(Dependencies.firebaseFirestore)
+    implementation(Dependencies.firebaseStorage)
     implementation(Dependencies.firebaseAuth)
     implementation(Dependencies.coroutinesPlayServices)
 

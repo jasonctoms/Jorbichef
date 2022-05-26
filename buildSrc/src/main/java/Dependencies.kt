@@ -5,7 +5,7 @@ object Versions {
     const val composeMaterial3 = "1.0.0-alpha12"
 
     // Firebase
-    const val firebaseBom = "29.0.3"
+    const val firebaseBom = "30.0.2"
     const val firebaseUiAuth = "8.0.0"
 
     // AndroidX
@@ -50,6 +50,7 @@ object Dependencies {
     const val firebaseAnalytics = "com.google.firebase:firebase-analytics-ktx"
     const val firebaseAuth = "com.google.firebase:firebase-auth-ktx"
     const val firebaseFirestore = "com.google.firebase:firebase-firestore-ktx"
+    const val firebaseStorage = "com.google.firebase:firebase-storage-ktx"
     const val firebaseUiAuth = "com.firebaseui:firebase-ui-auth:${Versions.firebaseUiAuth}"
 
     // AndroidX

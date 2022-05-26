@@ -101,8 +101,9 @@ fun MainScreen(viewModel: MainScreenViewModel) {
                             modifier = Modifier
                                 .fillMaxWidth()
                                 .clickable {
-
-                                }) {
+                                    viewModel.forceSync()
+                                }
+                        ) {
                             Icon(Icons.Default.CloudDownload, contentDescription = null)
                             Spacer(modifier = Modifier.size(24.dp))
                             Text(stringResource(id = R.string.options_menu_sync))
@@ -111,7 +112,7 @@ fun MainScreen(viewModel: MainScreenViewModel) {
                 },
             )
         }
-        MainScreenNavigationConfigurations(navController, it)
+        MainScreenNavigation(navController, it)
     }
 }
 
@@ -149,7 +150,7 @@ private fun JorbichefBottomNavigation(
 }
 
 @Composable
-private fun MainScreenNavigationConfigurations(
+private fun MainScreenNavigation(
     navController: NavHostController,
     contentPadding: PaddingValues
 ) {
@@ -159,15 +160,13 @@ private fun MainScreenNavigationConfigurations(
         startDestination = BottomNavigationScreens.WeeklyMenu.route
     ) {
         composable(BottomNavigationScreens.WeeklyMenu.route) {
-            val viewModel = getViewModel<WeeklyMenuViewModel>()
-            WeeklyMenuScreen(viewModel)
+            WeeklyMenuScreen()
         }
         composable(BottomNavigationScreens.GroceryList.route) {
             GroceryListScreen()
         }
         composable(BottomNavigationScreens.Recipes.route) {
-            val viewModel = getViewModel<RecipesViewModel>()
-            RecipesScreen(viewModel)
+            RecipesScreen()
         }
     }
 }

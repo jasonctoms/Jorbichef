@@ -1,13 +1,16 @@
 package com.jorbital.jorbichef.backend.firebase
 
 import com.jorbital.jorbichef.backend.database.entities.IngredientEntity
+import com.jorbital.jorbichef.backend.database.entities.IngredientType
 import com.jorbital.jorbichef.backend.database.entities.RecipeEntity
 import com.jorbital.jorbichef.backend.database.entities.TagEntity
 import java.util.*
 
 data class DefaultIngredientDocument(
     val id: String = "",
-    val name: Map<String, String> = emptyMap()
+    val name: Map<String, String> = emptyMap(),
+    val imageUrl: String = "",
+    val type: String = "OTHER"
 )
 
 fun DefaultIngredientDocument.toEntity(): IngredientEntity {
@@ -18,6 +21,8 @@ fun DefaultIngredientDocument.toEntity(): IngredientEntity {
     return IngredientEntity(
         id = this.id,
         name = this.name[language].orEmpty(),
+        imageUrl = this.imageUrl,
+        type = IngredientType.valueOf(this.type),
         isCustom = false
     )
 }
@@ -41,13 +46,17 @@ fun DefaultTagDocument.toEntity(): TagEntity {
 
 data class CustomIngredientDocument(
     val id: String = "",
-    val name: String = ""
+    val name: String = "",
+    val imageUrl: String = "",
+    val type: String = "OTHER"
 )
 
 fun CustomIngredientDocument.toEntity(): IngredientEntity {
     return IngredientEntity(
         id = this.id,
         name = this.name,
+        imageUrl = this.imageUrl,
+        type = IngredientType.valueOf(this.type),
         isCustom = true
     )
 }
